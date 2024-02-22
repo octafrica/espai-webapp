@@ -1,0 +1,65 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #111;
+  color: white;
+}
+@keyframes mymove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.border-container {
+  border-left: double 1px transparent;
+  background-image: linear-gradient(#111, #111),
+    linear-gradient(to right, white, #111);
+  border-image-outset: 0px;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-image-repeat: stretch;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(to right, #ff9a9e, #fad0c4);
+    border-image-slice: 1;
+    border-radius: 24px;
+  }
+}
+
+/* Width */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust width as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5150AE;
+  border-radius: 10px; /* Make the thumb rounded */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
