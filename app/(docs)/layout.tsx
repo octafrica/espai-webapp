@@ -19,12 +19,11 @@ const DocsLayout = ({children}:PropsWithChildren<any>) => (
                             href={"/"}
                             className="flex gap-2 items-center">
                             <Image
-                                src={'/espai-logo.svg'}
+                                src={'/app_logo.svg'}
                                 alt="Espai"
-                                width={39}
-                                height={39}
+                                width={80}
+                                height={80}
                             />`
-                            <p className="text-white">Espai</p>
                         </Link>
                     </div>
                     {children}

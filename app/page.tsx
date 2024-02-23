@@ -124,12 +124,11 @@ export default function Home() {
                 ref={logoRef}
               >
                 <Image
-                  src={"/espai-logo.svg"}
+                  src={"/app_logo.svg"}
                   alt="Espai"
-                  width={39}
-                  height={39}
+                  width={80}
+                  height={80}
                 />`
-                <p className="text-white">Espai</p>
               </Link>
             </div>
             <div
@@ -295,10 +294,10 @@ export default function Home() {
           />
           <div className="flex flex-col justify-center">
             <Image
-              src={"/espai-logo.svg"}
-              className="mx-auto mb-4 "
-              width={105}
-              height={105}
+              src={"/app_logo.svg"}
+              className="mx-auto mb-6"
+              width={120}
+              height={120}
               alt=""
             />
             <p className="text-center text-[32px] md:text-5xl font-bold mb-10">
