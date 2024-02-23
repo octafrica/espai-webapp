@@ -317,7 +317,7 @@ export default function Home() {
           Explore the Art of Interior Design With a Touch of Magic
         </p>
 
-        <div className='flex text-xs font-satoshi items-center justify-center space-x-8 mt-10'>
+        <div className='flex text-xs font-satoshi items-center justify-center space-x-8 my-14'>
           <Link href='/privacy' className='hover:underline'>Privacy Policy</Link>
           <Link href='/terms' className='hover:underline'>Terms Of Use</Link>
           <Link href='mailto:hello@espai.co' className='hover:underline'>Contact Us</Link>
