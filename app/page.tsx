@@ -124,12 +124,11 @@ export default function Home() {
                 ref={logoRef}
               >
                 <Image
-                  src={"/espai-logo.svg"}
+                  src={"/app_logo.svg"}
                   alt="Espai"
-                  width={39}
-                  height={39}
-                />
-                <p className="text-white">Espai</p>
+                  width={80}
+                  height={80}
+                />`
               </Link>
             </div>
             <div
@@ -295,10 +294,10 @@ export default function Home() {
           />
           <div className="flex flex-col justify-center">
             <Image
-              src={"/espai-logo.svg"}
-              className="mx-auto mb-4 "
-              width={105}
-              height={105}
+              src={"/app_logo.svg"}
+              className="mx-auto mb-6"
+              width={120}
+              height={120}
               alt=""
             />
             <p className="text-center text-[32px] md:text-5xl font-bold mb-10">
@@ -316,6 +315,12 @@ export default function Home() {
         <p className="font-satoshi md:mt-64 text-[12px] md:text-sm text-center mt-20 w-fit mx-auto max-w-lg mb-4">
           Explore the Art of Interior Design With a Touch of Magic
         </p>
+
+        <div className='flex text-xs font-satoshi items-center justify-center space-x-8 my-14'>
+          <Link href='/privacy' className='hover:underline'>Privacy Policy</Link>
+          <Link href='/terms' className='hover:underline'>Terms Of Use</Link>
+          <Link href='mailto:hello@espai.co' className='hover:underline'>Contact Us</Link>
+        </div>
       </footer>
     </main>
   );

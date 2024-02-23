@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kaisei_Decol, Poppins } from "next/font/google";
 import "./globals.css";
+import Logo from '/public/app_logo.svg';
 
 const kaisei_decol = Kaisei_Decol({
   subsets: ["latin"],
@@ -12,8 +13,34 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Espai",
-  description: "Explore the Art of Interior Design With a Touch of Magic",
+    title: "Espai",
+    metadataBase: new URL('htps://espai.co'),
+    description: "Explore the Art of Interior Design With a Touch of Magic",
+    keywords: [
+        'Interior design',
+        'Room redesign',
+        'Home decor',
+        'DIY decor',
+        'Furniture shopping',
+        'Interior inspiration',
+        'Design ideas',
+        'Decorating tips',
+        'Home makeover',
+        'Space transformation',
+        'AI-powered design',
+        'Room visualization',
+        'Furniture links',
+        'Decor shopping',
+        'Home styling',
+        'Design variants',
+        'Creative ideas',
+        'Room makeover',
+        'Design trends',
+        'Space reinvention',
+    ],
+    openGraph: {
+        images: [Logo.src],
+    },
 };
 
 export default function RootLayout({
@@ -31,3 +58,4 @@ export default function RootLayout({
     </html>
   );
 }
+
