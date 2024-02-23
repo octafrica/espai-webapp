@@ -128,7 +128,7 @@ export default function Home() {
                   alt="Espai"
                   width={39}
                   height={39}
-                />
+                />`
                 <p className="text-white">Espai</p>
               </Link>
             </div>
@@ -316,6 +316,12 @@ export default function Home() {
         <p className="font-satoshi md:mt-64 text-[12px] md:text-sm text-center mt-20 w-fit mx-auto max-w-lg mb-4">
           Explore the Art of Interior Design With a Touch of Magic
         </p>
+
+        <div className='flex text-xs font-satoshi items-center justify-center space-x-8 mt-10'>
+          <Link href='/privacy' className='hover:underline'>Privacy Policy</Link>
+          <Link href='/terms' className='hover:underline'>Terms Of Use</Link>
+          <Link href='mailto:hello@espai.co' className='hover:underline'>Contact Us</Link>
+        </div>
       </footer>
     </main>
   );
