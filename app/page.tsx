@@ -5,12 +5,16 @@ import HeaderTitle from "@/components/header-title";
 import Image from "next/image";
 import Link from "next/link";
 import ContentGrid from "@/components/content-grid";
-import { useLayoutEffect, useRef } from "react";
+import {useEffect, useLayoutEffect, useRef} from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import Fbase from "@/services/firebase";
+import AppRemoteConfig, {RemoteConfigKeys} from "@/services/remote_config";
+import {fetchAndActivate} from "@firebase/remote-config";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
+
   const logoRef = useRef(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
   const howEspaiWorksRef = useRef<HTMLDivElement | null>(null);
@@ -104,6 +108,16 @@ export default function Home() {
       }
     };
   }, []);
+
+  /*
+  useEffect(() => {
+    const app = Fbase.getApp()
+    const rConf = AppRemoteConfig.getInstance(app)
+    // Use this to set link for play and apple store
+    const v = AppRemoteConfig.getRemoteVal(rConf, RemoteConfigKeys.googlePlayUrl)
+    console.log({v})
+
+  }, []);*/
 
   return (
     <main className="relative bg-default">
