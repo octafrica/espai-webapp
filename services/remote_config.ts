@@ -9,6 +9,7 @@ export enum RemoteConfigKeys  {
 class AppRemoteConfig {
     static async getInstance (app: FirebaseApp): Promise<RemoteConfig> {
         const remoteConfig = getRemoteConfig(app)
+        // remoteConfig.settings.minimumFetchIntervalMillis = 500;
         await fetchAndActivate(remoteConfig)
         return remoteConfig
     }

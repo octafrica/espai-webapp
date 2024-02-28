@@ -5,7 +5,7 @@ import HeaderTitle from "@/components/header-title";
 import Image from "next/image";
 import Link from "next/link";
 import ContentGrid from "@/components/content-grid";
-import {useEffect, useLayoutEffect, useRef} from "react";
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Fbase from "@/services/firebase";
@@ -19,6 +19,9 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const howEspaiWorksRef = useRef<HTMLDivElement | null>(null);
   const footerRef = useRef<HTMLDivElement | null>(null);
+  const [appDownloadLinks, setAppDownloadUrls] = useState<{ appleStoreUrl: string, googlePlayUrl: string, isLoading: boolean }>({appleStoreUrl: '', googlePlayUrl:'', isLoading: true})
+
+
   useLayoutEffect(() => {
     const logo = logoRef.current;
     const logoTimeline = gsap.timeline();
@@ -109,15 +112,21 @@ export default function Home() {
     };
   }, []);
 
-  /*
   useEffect(() => {
-    const app = Fbase.getApp()
-    const rConf = AppRemoteConfig.getInstance(app)
-    // Use this to set link for play and apple store
-    const v = AppRemoteConfig.getRemoteVal(rConf, RemoteConfigKeys.googlePlayUrl)
-    console.log({v})
+    (async () => {
+      const app = Fbase.getApp()
+      const rConf = await AppRemoteConfig.getInstance(app)
+      // Use this to set link for play and apple store
+      const googlePlayUrl = AppRemoteConfig.getRemoteVal(rConf, RemoteConfigKeys.googlePlayUrl)
+      const appleStoreUrl = AppRemoteConfig.getRemoteVal(rConf, RemoteConfigKeys.appleStoreUrl)
+      setAppDownloadUrls({isLoading: false, googlePlayUrl: googlePlayUrl.asString(), appleStoreUrl: appleStoreUrl.asString()})
+      console.log({googlePlayUrl: googlePlayUrl.asString(), apl: appleStoreUrl.asString()})
+    })()
 
-  }, []);*/
+  }, []);
+
+
+  if (appDownloadLinks.isLoading) return null;
 
   return (
     <main className="relative bg-default">
@@ -157,7 +166,7 @@ export default function Home() {
                 Discover the Ultimate DIY Interior Design Experience with Espai 
               </p>
               <div className=" relative">
-                <AppBadge />
+                <AppBadge googlePlayUrl={appDownloadLinks.googlePlayUrl} appleStoreUrl={appDownloadLinks.appleStoreUrl}/>
               </div>
             </div>
           </div>
@@ -322,7 +331,7 @@ export default function Home() {
               Join our community of design enthusiasts
             </p>
             <div className="w-11/12 mx-auto relative">
-              <AppBadge />
+              <AppBadge googlePlayUrl={appDownloadLinks.googlePlayUrl} appleStoreUrl={appDownloadLinks.appleStoreUrl}/>
             </div>
           </div>
         </div>
