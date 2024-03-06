@@ -24,7 +24,7 @@ jobs:
 
       # Use your private ai-pr-reviewer action
       - name: AI PR Reviewer
-        uses: octafrica/code-review-action@v1.0.4
+        uses: octafrica/code-review-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.AI_REVIEW_PAT_REPO }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
