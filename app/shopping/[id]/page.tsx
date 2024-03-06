@@ -23,7 +23,7 @@ const ShoppingPage = async ({ params:{ id } }:{params: {id: string}}) => {
     }
 
     // @ts-ignore
-    if (res.url) {
+    if (res.url) { // if defined
         // @ts-ignore
         redirect(res.url)
     }
