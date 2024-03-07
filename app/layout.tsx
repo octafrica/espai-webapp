@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Kaisei_Decol, Poppins } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import "./globals.css";
 import Logo from '/public/app_logo.svg';
 
@@ -54,6 +56,7 @@ export default function RootLayout({
         className={`${kaisei_decol.className}  border-red-600 md:border-blue-600 lg:border-green-600 xl:border-yellow-600 2xl:border-purple `}
       >
         {children}
+        <SpeedInsights/>
       </body>
     </html>
   );
