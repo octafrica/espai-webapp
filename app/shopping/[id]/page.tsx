@@ -14,6 +14,7 @@ interface ShoppingURL {
 const ShoppingPage = async ({ params:{ id } }:{params: {id: string}}) => {
     let res: ShoppingURL | null = null;
     let url: string | null = null
+
     try {
         res = await new Promise((resolve, reject) => {
             verify(id, process.env.SHOPPING_URL_JWT_SECRET as string, {issuer: 'espai'}, (err, decoded:any) => {
@@ -27,7 +28,7 @@ const ShoppingPage = async ({ params:{ id } }:{params: {id: string}}) => {
             return null
         }
 
-
+        url = res.url
         if (res.source.toLowerCase() === SupportedMerchants.Amazon) {
             // When not amazon, we should create the url on the server
             url = ShoppingLinksCreator.createAmazonShoppingLink(res.url)
