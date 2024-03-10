@@ -1,5 +1,9 @@
+'use server';
+
 import {verify} from 'jsonwebtoken'
-import {redirect} from "next/navigation";
+import {redirect, RedirectType} from "next/navigation";
+import {SupportedMerchants} from "@/utils/constants";
+import {ShoppingLinksCreator} from "@/services/shopping-links-helper";
 
 interface ShoppingURL {
     url: string
@@ -8,7 +12,8 @@ interface ShoppingURL {
 }
 
 const ShoppingPage = async ({ params:{ id } }:{params: {id: string}}) => {
-    let res: ShoppingURL;
+    let res: ShoppingURL | null = null;
+    let url: string | null = null
     try {
         res = await new Promise((resolve, reject) => {
             verify(id, process.env.SHOPPING_URL_JWT_SECRET as string, {issuer: 'espai'}, (err, decoded:any) => {
@@ -17,17 +22,27 @@ const ShoppingPage = async ({ params:{ id } }:{params: {id: string}}) => {
             })
         })
 
-        if (!res.url) console.log('Invalid redirect url token!', id);
+        if (!res?.url) {
+            console.log('Invalid redirect url token!', id);
+            return null
+        }
+
+
+        if (res.source.toLowerCase() === SupportedMerchants.Amazon) {
+            // When not amazon, we should create the url on the server
+            url = ShoppingLinksCreator.createAmazonShoppingLink(res.url)
+        }
+
+        if (url == null) {
+            // Display error page
+        }
     }catch(e){
-        console.log('Error occurred decoding url token', id, e)
+        console.log('Error occurred decoding url token', e)
     }
 
-    // @ts-ignore
-    if (res.url) { // if defined
-        // @ts-ignore
-        redirect(res.url)
+    if (url) {
+        redirect(url)
     }
-
     return null
 }
 
