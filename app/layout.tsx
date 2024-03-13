@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         'Space reinvention',
     ],
     openGraph: {
-        // siteName: 'Espai',
+        siteName: 'Espai',
         url: 'https://espai.co',
         images: [
             {
