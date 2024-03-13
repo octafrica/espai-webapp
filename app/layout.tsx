@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css";
 import Logo from '/public/app_logo.svg';
+import OgImg from '/public/og-imgs/img.png'
 
 const kaisei_decol = Kaisei_Decol({
   subsets: ["latin"],
@@ -41,7 +42,22 @@ export const metadata: Metadata = {
         'Space reinvention',
     ],
     openGraph: {
-        images: [Logo.src],
+        // siteName: 'Espai',
+        url: 'https://espai.co',
+        images: [
+            {
+                url: OgImg.src,
+                width: 800,
+                height: 600,
+            },
+            {
+                url: OgImg.src,
+                width: 1800,
+                height: 1600,
+            }
+        ],
+        locale: 'en_US',
+        type: 'website',
     },
 };
 
