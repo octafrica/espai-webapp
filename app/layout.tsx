@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "./globals.css";
 import Logo from '/public/app_logo.svg';
-import OgImg from '/public/og-imgs/img.png'
+// import OgImg from '/public/og-img.png'
 
 const kaisei_decol = Kaisei_Decol({
   subsets: ["latin"],
@@ -46,12 +46,12 @@ export const metadata: Metadata = {
         url: 'https://espai.co',
         images: [
             {
-                url: OgImg.src,
+                url: "/og-img.png",
                 width: 800,
                 height: 600,
             },
             {
-                url: OgImg.src,
+                url: "/og-img.png",
                 width: 1800,
                 height: 1600,
             }
