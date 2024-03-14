@@ -162,7 +162,7 @@ export default function Home() {
                 Explore the Art of Interior Design With a Touch of Magic
               </h1>
               <p className="mt-5 md:mt-3 font-satoshi text-[14px] md:text-base">
-                Discover the Ultimate DIY Interior Design Experience with Espai 
+                Discover the Ultimate DIY Interior Design & Virtual Staging Experience with Espai 
               </p>
               <div className=" relative">
                 <AppBadge googlePlayUrl={appDownloadLinks.googlePlayUrl} appleStoreUrl={appDownloadLinks.appleStoreUrl}/>
