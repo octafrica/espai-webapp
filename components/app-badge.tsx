@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AppBadge(props: PropsWithChildren<{ appleStoreUrl: string, googlePlayUrl: string }>) {
   return (
-    <div className="grid grid-cols-2 mx-auto  w-fit">
+    <div className="mx-auto  w-fit flex">
         <Link href={props.googlePlayUrl == '' ? '/' : props.googlePlayUrl}>
           <Image
             alt="Google Play Store"
@@ -15,6 +15,8 @@ export default function AppBadge(props: PropsWithChildren<{ appleStoreUrl: strin
             height={55}
           />
         </Link>
+
+        {props.appleStoreUrl !== '' &&
         <Link href={props.appleStoreUrl == '' ? '/':props.appleStoreUrl}>
           <Image
             alt="Google Play Store"
@@ -25,6 +27,7 @@ export default function AppBadge(props: PropsWithChildren<{ appleStoreUrl: strin
             className="p-4"
           />
         </Link>
+        }
     </div>
   );
 }
