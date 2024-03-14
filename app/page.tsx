@@ -120,7 +120,6 @@ export default function Home() {
       const googlePlayUrl = AppRemoteConfig.getRemoteVal(rConf, RemoteConfigKeys.googlePlayUrl)
       const appleStoreUrl = AppRemoteConfig.getRemoteVal(rConf, RemoteConfigKeys.appleStoreUrl)
       setAppDownloadUrls({isLoading: false, googlePlayUrl: googlePlayUrl.asString(), appleStoreUrl: appleStoreUrl.asString()})
-      console.log({googlePlayUrl: googlePlayUrl.asString(), apl: appleStoreUrl.asString()})
     })()
 
   }, []);
@@ -132,7 +131,7 @@ export default function Home() {
     <main className="relative bg-default">
       <Image
         src={"/led-one.svg"}
-        alt=""
+        alt="header-highlight"
         width={1000}
         height={1000}
         className="absolute top-0 left-0 "
@@ -148,7 +147,7 @@ export default function Home() {
               >
                 <Image
                   src={"/app_logo.svg"}
-                  alt="Espai"
+                  alt="Espai Logo"
                   width={80}
                   height={80}
                 />`
@@ -186,14 +185,14 @@ export default function Home() {
                       className="w-full h-full rounded-2xl hover:shadow-md hover:shadow-purple transition-shadow duration-300"
                       width={144}
                       height={150}
-                      alt=""
+                      alt="Room Decor"
                     />
                     <Image
                       src={"/bento-one-img.svg"}
                       width={144}
                       className="w-full h-full rounded-2xl hover:shadow-md hover:shadow-purple transition-shadow duration-300"
                       height={150}
-                      alt=""
+                      alt="Room Decor"
                     />
                   </div>
                 </GrayBento>
@@ -204,7 +203,7 @@ export default function Home() {
                       className="w-full h-full rounded-2xl"
                       width={144}
                       height={150}
-                      alt=""
+                      alt="Room Decor"
                     />
                     <p className="my-4"> Tips</p>
                     <div className="grid grid-cols-3 gap-3">
@@ -227,42 +226,42 @@ export default function Home() {
                       className="w-full h-full rounded-2xl hover:shadow-lg duration-300 transition-shadow hover:shadow-purple"
                       width={68}
                       height={68}
-                      alt=""
+                      alt="Amazon logo"
                     />
                     <Image
                       src={"/wayfair.svg"}
                       className="w-full h-full rounded-2xl hover:shadow-lg duration-300 transition-shadow hover:shadow-purple"
                       width={68}
                       height={68}
-                      alt=""
+                      alt="Wayfair logo"
                     />
                     <Image
                       src={"/ikea.svg"}
                       className="w-full h-full rounded-2xl hover:shadow-lg duration-300 transition-shadow hover:shadow-purple"
                       width={68}
                       height={68}
-                      alt=""
+                      alt="Ikea logo"
                     />
                     <Image
                       src={"/west-elm.svg"}
                       className="w-full h-full rounded-2xl hover:shadow-lg duration-300 transition-shadow hover:shadow-purple"
                       width={68}
                       height={68}
-                      alt=""
+                      alt="West Elm Logo"
                     />
                     <Image
                       src={"/etsy.svg"}
                       className="w-full h-full rounded-2xl hover:shadow-lg duration-300 transition-shadow hover:shadow-purple"
                       width={68}
                       height={68}
-                      alt=""
+                      alt="Etsy logo"
                     />
                     <Image
                       src={"/soho.svg"}
                       className="w-full h-full rounded-2xl hover:shadow-lg duration-300 transition-shadow hover:shadow-purple"
                       width={68}
                       height={68}
-                      alt=""
+                      alt="Soho Logo"
                     />
                   </div>
                 </GrayBento>
@@ -313,7 +312,7 @@ export default function Home() {
             className="absolute object-center top-0 md:-top-20 -z-1"
             width={600}
             height={600}
-            alt=""
+            alt="header-highlight"
           />
           <div className="flex flex-col justify-center">
             <Image
@@ -321,7 +320,7 @@ export default function Home() {
               className="mx-auto mb-6"
               width={120}
               height={120}
-              alt=""
+              alt="Espai logo"
             />
             <p className="text-center text-[32px] md:text-5xl font-bold mb-10">
               Be The First To Experience Espai

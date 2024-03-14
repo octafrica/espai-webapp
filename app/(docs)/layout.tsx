@@ -6,7 +6,7 @@ const DocsLayout = ({children}:PropsWithChildren<any>) => (
     <main className="relative bg-default">
         <Image
             src={"/led-one.svg"}
-            alt=""
+            alt="header-highlight"
             width={1000}
             height={1000}
             className="absolute top-0 left-0 "
@@ -20,7 +20,7 @@ const DocsLayout = ({children}:PropsWithChildren<any>) => (
                             className="flex gap-2 items-center">
                             <Image
                                 src={'/app_logo.svg'}
-                                alt="Espai"
+                                alt="Espai Logo"
                                 width={80}
                                 height={80}
                             />`
