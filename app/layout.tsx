@@ -17,9 +17,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "Espai | Virtual Staging, Interior Design, Furniture & Decor discovery & Shopping",
+    title: "Espai| Virtual Staging, Interior Design, Furniture, Decor discovery",
     metadataBase: new URL('htps://espai.co'),
-    description: "Transform your spaces effortlessly with the power of AI! Explore virtual staging solutions for real estate agents and impress clients, discover interior design ideas, extract furniture or decor from images and get shoppable links for them instantly",
+    description: "Transform your spaces with AI! Explore virtual staging solutions for real estate agents, discover interior design ideas, extract furniture & decor from images & get shoppable links for them instantly",
     keywords: [
         'Virtual Staging',
         'Real Estate',
